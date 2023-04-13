@@ -1,4 +1,4 @@
-# Selenium project challenge
+# Selenium project learning
 
 ## Steps
 
