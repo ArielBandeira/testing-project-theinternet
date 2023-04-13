@@ -2,9 +2,9 @@
 
 ## Steps
 
- - [ ] Create project with skeleton of folders/files structure
- - [ ] Create a repository on github
- - [ ] Upload the project to the github repository
+ - [X] Create project with skeleton of folders/files structure
+ - [X] Create a repository on github
+ - [X] Upload the project to the github repository
  - [ ] Create base package for tests
 	 - [ ] BaseTest
 	 - [ ] BrowserFactory
