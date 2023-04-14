@@ -36,6 +36,7 @@
 Project should follow this template of organization:
 
 ```mermaid
+graph
 1[src] ---> 2[main]
 1[src] ---> 3[test]
 2[main] ---> 4[java]
