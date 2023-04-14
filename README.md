@@ -6,10 +6,10 @@
  - [X] Create a repository on github
  - [X] Upload the project to the github repository
  - [ ] Create base package for tests
-	 - [ ] BaseTest
-	 - [ ] BrowserFactory
+	 - [X] BaseTest
+	 - [X] BrowserFactory
 	 - [ ] TestListener
-	 - [ ] TestUtilities
+	 - [X] TestUtilities
  - [ ] Use test listeners for ALL tests
  - [ ] Use soft assert for ALL tests
  - [ ] Use logger for ALL tests
@@ -23,7 +23,7 @@
 	 - [ ] Create a test suite for each page
 	 - [ ] Create smoke test for positive scenarios
 	 - [ ] Create full regression test suite for all tests
- - [ ] Test on firefox and edge
+ - [ ] Test on firefox
  - [ ] List of tests:
 	 - [ ] [Welcome Page](https://the-internet.herokuapp.com)
 	 - [ ] [Digest Authentication](https://the-internet.herokuapp.com/digest_auth)
