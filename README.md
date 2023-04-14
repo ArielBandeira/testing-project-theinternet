@@ -41,6 +41,7 @@ graph
 1[src] ---> 3[test]
 2[main] ---> 4[java]
 2[main] ---> 5[resources]
+5[resources] ---> 36[files]
 3[test] ---> 6[java]
 3[test] ---> 7[resources]
 4[java] ---> 8[com.herokuapp.theinternet]
