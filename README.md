@@ -26,7 +26,7 @@
  - [ ] Test on firefox
  - [ ] List of tests:
 	 - [ ] [Welcome Page](https://the-internet.herokuapp.com)
-	 - [ ] [Digest Authentication](https://the-internet.herokuapp.com/digest_auth)
+	 - [ ] [Basic Auth](https://the-internet.herokuapp.com/basic_auth)
 	 - [ ] [Dropdown](https://the-internet.herokuapp.com/dropdown)
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
