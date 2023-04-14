@@ -29,7 +29,6 @@
 	 - [ ] [Digest Authentication](https://the-internet.herokuapp.com/digest_auth)
 	 - [ ] [Dropdown](https://the-internet.herokuapp.com/dropdown)
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
-	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
 
 ## Project diagram
