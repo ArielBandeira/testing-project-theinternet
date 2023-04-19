@@ -4,13 +4,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
-
 public class WelcomePage extends BasePageObject {
 
     String welcomePageUrl = "https://the-internet.herokuapp.com";
-
-    protected By basicAuthLinkLocator = By.linkText("Basic Auth");
     protected By dropdownLinkLocator = By.linkText("Dropdown");
     protected By dynamicControlsLinkLocator = By.linkText("Dynamic Controls");
     protected By dynamicLoadingLinkLocator = By.linkText("Dynamic Loading");
@@ -23,32 +19,27 @@ public class WelcomePage extends BasePageObject {
         openUrl(welcomePageUrl);
     }
 
-    //Open Basic Auth page
-    public BasicAuthPage clickBasicAuthLink(By basicAuthLinkLocator) {
-        log.info("Open Basic Auth page");
-        click(basicAuthLinkLocator);
-        return new BasicAuthPage(driver, log);
-    }
-
     //Open Dropdown page
-    public DropdownPage clickDropdownLink(By dropdownLinkLocator) {
+    public DropdownPage clickDropdownLink() {
         log.info("Open Dropdown page");
         click(dropdownLinkLocator);
         return new DropdownPage(driver, log);
     }
 
-    //Open Dynamic Controls page
-    public DynamicControlsPage clickDynamicControlsLink(By dynamicControlsLinkLocator) {
-        log.info("Open Dynamic Controls page");
-        click(dynamicControlsLinkLocator);
-        return new DynamicControlsPage(driver, log);
-    }
-
     //Open Dynamic Loading page
-    public DynamicLoadingPage clickDynamicLoadingLink(By dynamicLoadingLinkLocator) {
+    public DynamicLoadingPage clickDynamicLoadingLink() {
         log.info("Open Dynamic Loading page");
         click(dynamicLoadingLinkLocator);
         return new DynamicLoadingPage(driver, log);
     }
+    /*
+   //Open Dynamic Controls page
+   public DynamicControlsPage clickDynamicControlsLink() {
+        log.info("Open Dynamic Controls page");
+        click(dynamicControlsLinkLocator);
+        return new DynamicControlsPage(driver, log);
+   }
+
+    */
 
 }

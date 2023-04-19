@@ -3,5 +3,57 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-failsafe-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-failsafe-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-common/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-report-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/maven-surefire-report-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-api/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-booter/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-booter/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-extensions-api/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-extensions-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-extensions-spi/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-extensions-spi/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-grouper/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-grouper/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-its/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-its/src/test/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-logger-api/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-logger-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-java5/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-java5/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit3/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit3/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit4/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit4/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit48/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/common-junit48/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit-platform/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit-platform/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit3/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit3/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit4/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit4/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit47/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-junit47/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-testng-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-testng-utils/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-testng/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-providers/surefire-testng/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-report-parser/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-report-parser/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-shadefire/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-shadefire/src/main/resources" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-shared-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/surefire-3.0.0/surefire-shared-utils/src/main/resources" charset="UTF-8" />
   </component>
 </project>

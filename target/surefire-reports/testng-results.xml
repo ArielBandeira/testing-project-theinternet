@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="5" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-18T23:02:03 BRT" name="RegressionTestSuite" finished-at="2023-04-18T23:02:39 BRT" duration-ms="36348">
+    <groups>
+    </groups>
+    <test started-at="2023-04-18T23:02:03 BRT" name="DropdownPickOptionTest" finished-at="2023-04-18T23:02:39 BRT" duration-ms="36348">
+      <class name="com.herokuapp.theinternet.dropdowntests.DropdownTests">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:03 BRT" name="setUp" finished-at="2023-04-18T23:02:07 BRT" duration-ms="4281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.herokuapp.theinternet.dropdowntests.DropdownTests.pickOptionTest(java.util.Map)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@223191a6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="pickOptionTest(java.util.Map)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:07 BRT" name="pickOptionTest" data-provider="csvReader" finished-at="2023-04-18T23:02:12 BRT" duration-ms="5155" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{options=1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pickOptionTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:12 BRT" name="tearDown" finished-at="2023-04-18T23:02:13 BRT" duration-ms="733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:13 BRT" name="setUp" finished-at="2023-04-18T23:02:17 BRT" duration-ms="3689" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.herokuapp.theinternet.dropdowntests.DropdownTests.pickOptionTest(java.util.Map)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@223191a6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="pickOptionTest(java.util.Map)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:17 BRT" name="pickOptionTest" data-provider="csvReader" finished-at="2023-04-18T23:02:22 BRT" duration-ms="5317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{options=2}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pickOptionTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:22 BRT" name="tearDown" finished-at="2023-04-18T23:02:23 BRT" duration-ms="565" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:23 BRT" name="setUp" finished-at="2023-04-18T23:02:25 BRT" duration-ms="2524" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.herokuapp.theinternet.dropdowntests.DropdownTests.pickOptionTest(java.util.Map)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@223191a6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="pickOptionTest(java.util.Map)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:25 BRT" name="pickOptionTest" data-provider="csvReader" finished-at="2023-04-18T23:02:30 BRT" duration-ms="5006" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{options=1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pickOptionTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:30 BRT" name="tearDown" finished-at="2023-04-18T23:02:31 BRT" duration-ms="572" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:31 BRT" name="setUp" finished-at="2023-04-18T23:02:33 BRT" duration-ms="2728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.herokuapp.theinternet.dropdowntests.DropdownTests.pickOptionTest(java.util.Map)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@223191a6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="pickOptionTest(java.util.Map)[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:33 BRT" name="pickOptionTest" data-provider="csvReader" finished-at="2023-04-18T23:02:39 BRT" duration-ms="5093" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{options=2}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pickOptionTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.dropdowntests.DropdownTests@2473d930]" started-at="2023-04-18T23:02:39 BRT" name="tearDown" finished-at="2023-04-18T23:02:39 BRT" duration-ms="605" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.herokuapp.theinternet.dropdowntests.DropdownTests -->
+    </test> <!-- DropdownPickOptionTest -->
+  </suite> <!-- RegressionTestSuite -->
+</testng-results>

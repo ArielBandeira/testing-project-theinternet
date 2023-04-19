@@ -1,5 +1,6 @@
 package com.herkuapp.theinternet.base;
 
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
@@ -19,6 +20,11 @@ public class BaseTest {
     //SetUp
     @BeforeMethod( alwaysRun = true )
     public void setUp(Method method, ITestContext ctx) {
+        String testName = ctx.getCurrentXmlTest().getName();
+        log = LogManager.getLogger(testName);
+
+        BrowserFactory factory = new BrowserFactory(log);
+        driver = factory.createDriver();
         driver.manage().window().maximize();
         this.testSuiteName = ctx.getSuite().getName();
         this.testName = testName;

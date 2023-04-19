@@ -1,16 +1,16 @@
 package com.herkuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
 
 import java.time.Duration;
+import java.util.List;
 
+@Listeners({ com.herkuapp.theinternet.base.TestListener.class })
 public class BasePageObject {
 
     protected WebDriver driver;
@@ -26,8 +26,34 @@ public class BasePageObject {
         driver.get(url);
     }
 
+    //Read page url
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
+
+    //Read page title
+    public String getCurrentPageTitle() {
+        return driver.getTitle();
+    }
+
+    //Type text
+    protected void type(String text, By locator) {
+        waitForVisibilityOf(locator, Duration.ofSeconds(5));
+        find(locator).sendKeys(text);
+    }
+
+    //Press key on locator
+    public void pressKey(By locator, Keys key) {
+        find(locator).sendKeys(key);
+    }
+
+    //Find list of elements
+    protected List<WebElement> findAll(By locator) {
+        return driver.findElements(locator);
+    }
+
     //Find element
-    private WebElement find(By locator) {
+    protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
@@ -38,7 +64,7 @@ public class BasePageObject {
     }
 
     //Wait for specific ExpectedCondition for the given amount of time in seconds
-    protected void waitFor(ExpectedCondition<WebElement> condition, Duration timeOut) {
+    private void waitFor(ExpectedCondition<WebElement> condition, Duration timeOut) {
         timeOut = timeOut != null ? timeOut : Duration.ofSeconds(30);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         wait.until(condition);
