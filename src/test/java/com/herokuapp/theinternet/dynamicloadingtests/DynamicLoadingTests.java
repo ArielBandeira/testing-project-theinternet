@@ -1,7 +1,6 @@
 package com.herokuapp.theinternet.dynamicloadingtests;
 
 import com.herkuapp.theinternet.base.TestUtilities;
-import com.herkuapp.theinternet.pages.DropdownPage;
 import com.herkuapp.theinternet.pages.DynamicLoadingPage;
 import com.herkuapp.theinternet.pages.WelcomePage;
 import org.openqa.selenium.By;
