@@ -1,4 +1,4 @@
-package com.herkuapp.theinternet.base;
+package com.herokuapp.theinternet.base;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

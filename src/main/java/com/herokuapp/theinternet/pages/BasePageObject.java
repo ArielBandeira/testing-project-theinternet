@@ -1,5 +1,6 @@
-package com.herkuapp.theinternet.pages;
+package com.herokuapp.theinternet.pages;
 
+import com.herokuapp.theinternet.base.TestListener;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -10,7 +11,7 @@ import org.testng.annotations.Listeners;
 import java.time.Duration;
 import java.util.List;
 
-@Listeners({ com.herkuapp.theinternet.base.TestListener.class })
+@Listeners({ TestListener.class })
 public class BasePageObject {
 
     protected WebDriver driver;

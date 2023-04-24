@@ -1,8 +1,8 @@
 package com.herokuapp.theinternet.dynamicloadingtests;
 
-import com.herkuapp.theinternet.base.TestUtilities;
-import com.herkuapp.theinternet.pages.DynamicLoadingPage;
-import com.herkuapp.theinternet.pages.WelcomePage;
+import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.pages.DynamicLoadingPage;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;

@@ -1,4 +1,4 @@
-package com.herkuapp.theinternet.base;
+package com.herokuapp.theinternet.base;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,7 +27,7 @@ public class TestUtilities extends BaseTest {
         //user.dir/test-output/TodayDate(yyyyMMdd)/testSuiteName/testName/testMethodName/SystemsTime(HHmmSSsss)/fileName.png
 
         String path = System.getProperty("user.dir") + File.separator + "test-output"
-                + File.separator + "screenshot"
+                + File.separator + "screenshots"
                 + File.separator + getTodaysDate()
                 + File.separator + testSuiteName
                 + File.separator + testName
