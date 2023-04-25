@@ -32,14 +32,12 @@ public class WelcomePage extends BasePageObject {
         click(dynamicLoadingLinkLocator);
         return new DynamicLoadingPage(driver, log);
     }
-    /*
+
    //Open Dynamic Controls page
    public DynamicControlsPage clickDynamicControlsLink() {
         log.info("Open Dynamic Controls page");
         click(dynamicControlsLinkLocator);
         return new DynamicControlsPage(driver, log);
    }
-
-    */
 
 }
