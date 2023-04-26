@@ -11,12 +11,9 @@ import java.util.Objects;
 
 public class DynamicControlsTests extends TestUtilities {
 
-    private By checkboxLocator = By.xpath("//input[@label='blah']");
-    private By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
-
     //REMOVE/ADD
     @Test
-    public void checkboxTest(){
+    public void checkboxTest() {
         SoftAssert softAssert = new SoftAssert();
         //Open Welcome Page
         WelcomePage welcomePage = new WelcomePage(driver, log);
@@ -32,7 +29,7 @@ public class DynamicControlsTests extends TestUtilities {
         softAssert.assertTrue(dynamicControlsPage.isCheckboxMarked(), "Checkbox is not marked");
 
         //Remove checkbox
-        dynamicControlsPage.clickRemoveButton(removeButtonLocator);
+        dynamicControlsPage.clickRemoveButton();
         sleep(3000);
 
         //Verify if checkbox is removed
@@ -41,15 +38,37 @@ public class DynamicControlsTests extends TestUtilities {
         sleep(3000);
     }
 
-
-
-
-
     //ENABLE/DISABLE
-    //Enable text input
+    @Test
+    public void textInputTest() {
+        SoftAssert softAssert = new SoftAssert();
+        //Open Welcome Page
+        WelcomePage welcomePage = new WelcomePage(driver, log);
+        welcomePage.openPage();
 
-    //Add text to text input
+        //Go to Dynamic Controls Page
+        DynamicControlsPage dynamicControlsPage = welcomePage.clickDynamicControlsLink();
 
-    //Disable text input
+        //Click on 'Enable' button to enable text input
+        dynamicControlsPage.clickEnableDisableButton();
+
+        //Verify if text input is enabled
+        softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled(), "Text input is disabled");
+
+        //Add text to text input
+        String text = "I'm Commander Shepard and this is my favorite test on the Citadel!";
+        dynamicControlsPage.typeOnTextInputTextbox(text);
+
+        //Click on 'Disable' button to disable text input
+        dynamicControlsPage.clickEnableDisableButton();
+
+        //Verify if text input is disabled
+        softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled(), "Text input is disabled");
+
+        //Verify if the text in the text input is the expected
+        String textOnInput = String.valueOf(dynamicControlsPage.getTextInputText());
+        softAssert.assertTrue(text.equals(textOnInput), "Text input is not the expected");
+
+    }
 
 }

@@ -6,11 +6,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.function.Function;
 
 @Listeners({ TestListener.class })
 public class BasePageObject {
@@ -66,13 +67,7 @@ public class BasePageObject {
     }
 
     //Wait for specific ExpectedCondition for the given amount of time in seconds
-    private void waitFor(ExpectedCondition<WebElement> condition, Duration timeOut) {
-        timeOut = timeOut != null ? timeOut : Duration.ofSeconds(30);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(condition);
-    }
-
-    protected void waitForBoolean(ExpectedCondition<Boolean> condition, Duration timeOut) {
+    protected void waitFor(ExpectedCondition<WebElement> condition, Duration timeOut) {
         timeOut = timeOut != null ? timeOut : Duration.ofSeconds(30);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         wait.until(condition);
