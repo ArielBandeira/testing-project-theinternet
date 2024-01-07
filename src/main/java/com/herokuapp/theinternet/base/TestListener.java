@@ -15,7 +15,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         this.testMethodName = result.getMethod().getMethodName();
-        log.info("[Starting" + testMethodName + "]");
+        log.info("[Starting " + testMethodName + "]");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class TestListener implements ITestListener {
     public void onStart(ITestContext context) {
         this.testName = context.getCurrentXmlTest().getName();
         this.log = LogManager.getLogger(testName);
-        log.info("[TEST " + testMethodName + " STARTED]");
+        log.info("[TEST " + testName + " STARTED]");
     }
 
     @Override
