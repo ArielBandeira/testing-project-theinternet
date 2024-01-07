@@ -5,12 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class DynamicControlsPage extends BasePageObject {
 
@@ -28,9 +27,15 @@ public class DynamicControlsPage extends BasePageObject {
     }
 
     public boolean isCheckboxMarked() {
-        log.info("Verify if checkbox is marked");
         WebElement checkbox = find(checkboxLocator);
-        return checkbox.isSelected();
+        log.info("Verify if checkbox is marked");
+        if (checkbox.isSelected()) {
+            log.info("Checkbox is marked");
+            return true;
+        } else {
+            log.info("Checkbox is not marked");
+            return false;
+        }
     }
 
     public void clickRemoveButton() {
@@ -38,10 +43,10 @@ public class DynamicControlsPage extends BasePageObject {
         click(removeButtonLocator);
     }
 
-    public String verifySsCheckboxDisplayed() {
+    public String verifyIsCheckboxDisplayed() {
         log.info("Verify if checkbox is displayed");
         try {
-            WebElement checkbox = find(checkboxLocator);
+            find(checkboxLocator);
             log.info("Checkbox is displayed");
             return "Checkbox is displayed";
         } catch (NoSuchElementException e) {
@@ -57,10 +62,19 @@ public class DynamicControlsPage extends BasePageObject {
         button.click();
     }
 
-    public boolean isTextInputEnabled() {
+    public Boolean isTextInputEnabled() {
         log.info("Verify if text input is enabled");
         WebElement textInput = find(textInputLocator);
-        return !textInput.isEnabled();
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        waitFor(ExpectedConditions.elementToBeClickable(enableDisableButtonLocator), Duration.ofSeconds(30));
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(textInput));
+            log.info("Text input is enabled");
+            return true;
+        }catch (Exception e) {
+            log.info("Text input is disabled");
+            return false;
+        }
     }
 
     public void typeOnTextInputTextbox(String text) {
@@ -71,7 +85,7 @@ public class DynamicControlsPage extends BasePageObject {
     }
 
     public String getTextInputText() {
-        String textOnTextInput = find(textInputLocator).getAttribute("value").toString();
+        String textOnTextInput = find(textInputLocator).getAttribute("value");
         log.info("Text on text input: " + textOnTextInput);
         return textOnTextInput;
     }
