@@ -23,7 +23,7 @@
 	 - [ ] Create a test suite for each page
 	 - [ ] Create smoke test for positive scenarios
 	 - [ ] Create full regression test suite for all tests
- - [ ] Test on firefox
+ - [ ] Test on chrome
  - [ ] List of tests:
 	 - [ ] [Welcome Page](https://the-internet.herokuapp.com)
 	 - [ ] [Dropdown](https://the-internet.herokuapp.com/dropdown)

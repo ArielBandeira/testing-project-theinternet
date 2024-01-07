@@ -2,7 +2,7 @@ package com.herkuapp.theinternet.base;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserFactory {
 
@@ -15,7 +15,7 @@ public class BrowserFactory {
 
     //Create driver
     public WebDriver createDriver() {
-        driver.set(new FirefoxDriver());
+        driver.set(new ChromeDriver());
         return driver.get();
     }
 
