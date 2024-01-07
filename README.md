@@ -30,6 +30,15 @@
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
 
+## Run Test Suites
+This project uses XML test suites. To run the test suites run configuration should be created first:
+
+1. Go to Run | Edit Configurations. 
+2. In the left-hand pane, click Add New Configuration and from the list that opens, select TestNG. Name the new configuration.
+3. From the Test kind list, select Suite -> The Suite field becomes available.
+4. In the Suite field, click Browse and specify the path `src\test\resouces\TestSuites\`
+5. Apply the changes and close the dialog.
+
 ## Project diagram
 
 Project should follow this template of organization:
