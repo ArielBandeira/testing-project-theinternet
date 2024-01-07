@@ -1,9 +1,9 @@
 package com.herokuapp.theinternet.dropdowntests;
 
-import com.herkuapp.theinternet.base.CsvDataProviders;
-import com.herkuapp.theinternet.base.TestUtilities;
-import com.herkuapp.theinternet.pages.DropdownPage;
-import com.herkuapp.theinternet.pages.WelcomePage;
+import com.herokuapp.theinternet.base.CsvDataProviders;
+import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.pages.DropdownPage;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import java.util.Map;
@@ -29,7 +29,8 @@ public class DropdownTests extends TestUtilities {
 
         //Pick one of the options
         dropdownPage.pickOption(option);
-        sleep(3000);
+        takeScreenshot("Option_picked_" + option);
+
         //Verify if selected option is the right one
         String expectedOption = dropdownPage.getSelectedOption();
         String actualOption = "Option " + Integer.parseInt(option);
@@ -60,10 +61,11 @@ public class DropdownTests extends TestUtilities {
         //Pick one of the options
         try {
             dropdownPage.pickOption(option);
+            takeScreenshot("Option picked");
         } catch (NoSuchElementException e) {
             throw new RuntimeException(e.getCause());
         }
-        sleep(3000);
+
         //Verify if selected option is the right one
         String expectedOption = dropdownPage.getSelectedOption();
         String actualOption = "Option " + Integer.parseInt(option);
