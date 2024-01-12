@@ -29,6 +29,7 @@
 	 - [ ] [Dropdown](https://the-internet.herokuapp.com/dropdown)
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
+     - [ ] [Multiple Windows](https://the-internet.herokuapp.com/windows)
 
 ## Run Test Suites
 This project uses XML test suites. To run the test suites run configuration should be created first:
@@ -64,10 +65,11 @@ graph
 10[pages] ---> 18[DropdownPage]
 10[pages] ---> 19[DynamicControlsPage]
 10[pages] ---> 20[DynamicLoadingPage]
-6[java] ---> 21[com.herokuapp.theinternet]
-21[com.herokuapp.theinternet] ---> 23[dropdowntests]
-21[com.herokuapp.theinternet] ---> 24[dynamiccontrolstests]
-21[com.herokuapp.theinternet] ---> 25[dynamicloadingtests]
+10[pages] ---> 21[MultipleWindowsPage]
+6[java] ---> 22[com.herokuapp.theinternet]
+22[com.herokuapp.theinternet] ---> 23[dropdowntests]
+22[com.herokuapp.theinternet] ---> 24[dynamiccontrolstests]
+22[com.herokuapp.theinternet] ---> 25[dynamicloadingtests]
 7[resources] ---> 26[dataproviders]
 7[resources] ---> 27[TestSuite]
 27[TestSuite] ---> 28[IndividualTestSuite]

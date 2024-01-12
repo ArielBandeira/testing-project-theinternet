@@ -17,8 +17,7 @@ public class DynamicLoadingPage extends BasePageObject {
     //Get current page URL
     public String getCurrentPageUrl() {
         log.info("Get current page URL");
-        String currentUrl = getCurrentUrl();
-        return currentUrl;
+        return getCurrentUrl();
     }
 
     public void verifyCurrentIsExpected(String current, String expected){

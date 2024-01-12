@@ -13,14 +13,12 @@ public class DynamicLoadingTests extends TestUtilities {
     private By exampleTwoPageLocator = By.xpath("//a[@href='/dynamic_loading/2']");
     private By startButtonLocator = By.tagName("button");
     private By textLocator = By.id("finish");
-    private String pageName;
 
     @Test
     //Example 1 test
     public void testExampleOne() {
         String pageName = "Example 1: Element on page that is hidden";
         String expectedUrl = "https://the-internet.herokuapp.com/dynamic_loading/1";
-        SoftAssert softAssert = new SoftAssert();
 
         //Open Welcome Page
         WelcomePage welcomePage = new WelcomePage(driver, log);
@@ -54,7 +52,6 @@ public class DynamicLoadingTests extends TestUtilities {
     public void testExampleTwo() {
         String pageName = "Example 2: Element rendered after the fact";
         String expectedUrl = "https://the-internet.herokuapp.com/dynamic_loading/2";
-        SoftAssert softAssert = new SoftAssert();
 
         //Open Welcome Page
         WelcomePage welcomePage = new WelcomePage(driver, log);

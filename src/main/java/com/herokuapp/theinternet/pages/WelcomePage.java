@@ -10,7 +10,7 @@ public class WelcomePage extends BasePageObject {
     protected By dropdownLinkLocator = By.linkText("Dropdown");
     protected By dynamicControlsLinkLocator = By.linkText("Dynamic Controls");
     protected By dynamicLoadingLinkLocator = By.linkText("Dynamic Loading");
-
+    protected By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
 
     public WelcomePage(WebDriver driver, Logger log) { super(driver, log); }
 
@@ -39,5 +39,12 @@ public class WelcomePage extends BasePageObject {
         click(dynamicControlsLinkLocator);
         return new DynamicControlsPage(driver, log);
    }
+
+   //Open Multiple Windows page
+    public MultipleWindowsPage clickMultipleWindowsLink() {
+        log.info("Open Multiple Windows page");
+        click(multipleWindowsLinkLocator);
+        return new MultipleWindowsPage(driver, log);
+    }
 
 }

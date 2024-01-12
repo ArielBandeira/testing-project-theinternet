@@ -6,12 +6,14 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Listeners;
-import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.List;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
+import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 @Listeners({ TestListener.class })
 public class BasePageObject {
@@ -83,6 +85,25 @@ public class BasePageObject {
             } catch (StaleElementReferenceException e) {}
             attempts++;
         }
+    }
+
+    protected void switchToWindowWithTitle(String windowTitle) {
+        //Store the ID of the original window
+        String originalWindow = driver.getWindowHandle();
+
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+
+        //Wait for the new window or tab
+        wait.until(numberOfWindowsToBe(2));
+
+        for (String windowHandle : driver.getWindowHandles()) {
+            if(!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+        //Wait for the new tab to finish loading content
+        wait.until(titleIs(windowTitle));
     }
 
 }
