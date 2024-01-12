@@ -10,6 +10,9 @@ import java.util.Objects;
 
 public class DynamicControlsTests extends TestUtilities {
 
+    String expectedEnabledMessage = "It's enabled!";
+    String expectedDisabledMessage = "It's disabled!";
+
     //REMOVE/ADD
     @Test
     public void checkboxTest() {
@@ -46,12 +49,11 @@ public class DynamicControlsTests extends TestUtilities {
 
         //Remove checkbox
         dynamicControlsPage.clickRemoveButton();
-        sleep(3000);
 
         //Verify if checkbox is removed
         String verifyCheckbox = dynamicControlsPage.verifyIsCheckboxDisplayed();
         softAssert.assertTrue(Objects.equals(verifyCheckbox, "Checkbox is displayed"), "Checkbox is not displayed");
-        sleep(3000);
+
     }
 
     //ENABLE/DISABLE
@@ -74,6 +76,9 @@ public class DynamicControlsTests extends TestUtilities {
         //Verify if text input is enabled
         softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled());
 
+        //Verify if text says "It's enabled!"
+        softAssert.assertTrue(dynamicControlsPage.checkTextInputStatusMessage(expectedEnabledMessage));
+
         //Add text to text input
         String text = "I'm Commander Shepard and this is my favorite test on the Citadel!";
         dynamicControlsPage.typeOnTextInputTextbox(text);
@@ -83,6 +88,9 @@ public class DynamicControlsTests extends TestUtilities {
 
         //Verify if text input is disabled
         softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled());
+
+        //Verify if text says "It's disabled!"
+        softAssert.assertTrue(dynamicControlsPage.checkTextInputStatusMessage(expectedDisabledMessage));
 
         //Verify if the text in the text input is the expected
         String textOnInput = String.valueOf(dynamicControlsPage.getTextInputText());

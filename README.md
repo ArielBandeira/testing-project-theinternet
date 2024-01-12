@@ -16,7 +16,7 @@
  - [ ] Take a screenshot at the end of every test and save on the right folder
 	 - Add a test-output/screenshots folder and inside it each screenshot should follow the pattern:
 		 - date/testsuitename/testname/methodname
- - [ ] Create a positive and negative scenarios
+ - [ ] Create a positive scenarios for each page
  - [ ] Create csv data providers
 	 - Store the data providers on: src/test/resources/dataproviders/testname 
  - [ ] Test suites

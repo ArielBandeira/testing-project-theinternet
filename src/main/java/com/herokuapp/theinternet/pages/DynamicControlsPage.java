@@ -18,6 +18,8 @@ public class DynamicControlsPage extends BasePageObject {
     private By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
     private By enableDisableButtonLocator = By.xpath("//form[@id='input-example']/button[@type='button']");
 
+    private By textInputMessageLocator = By.xpath("//*[@id='message']");
+
     public DynamicControlsPage(WebDriver driver, Logger log) { super(driver, log); }
 
     public void markCheckbox() {
@@ -88,6 +90,13 @@ public class DynamicControlsPage extends BasePageObject {
         String textOnTextInput = find(textInputLocator).getAttribute("value");
         log.info("Text on text input: " + textOnTextInput);
         return textOnTextInput;
+    }
+
+    public boolean checkTextInputStatusMessage(String expectedMessage) {
+        log.info("Verify if text input status message is the expected");
+        String actualMessage = find(textInputMessageLocator).getText();
+        log.info("Text input status message: " + actualMessage);
+        return !actualMessage.equals(expectedMessage);
     }
 
 }
