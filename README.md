@@ -30,6 +30,7 @@
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
      - [ ] [Multiple Windows](https://the-internet.herokuapp.com/windows)
+     - [ ] [Entry Ad](https://the-internet.herokuapp.com/entry_ad)
 
 ## Run Test Suites
 This project uses XML test suites. To run the test suites run configuration should be created first:
@@ -50,7 +51,7 @@ graph
 1[src] ---> 3[test]
 2[main] ---> 4[java]
 2[main] ---> 5[resources]
-5[resources] ---> 36[files]
+5[resources] ---> 37[files]
 3[test] ---> 6[java]
 3[test] ---> 7[resources]
 4[java] ---> 8[com.herokuapp.theinternet]
@@ -70,12 +71,13 @@ graph
 22[com.herokuapp.theinternet] ---> 23[dropdowntests]
 22[com.herokuapp.theinternet] ---> 24[dynamiccontrolstests]
 22[com.herokuapp.theinternet] ---> 25[dynamicloadingtests]
-7[resources] ---> 26[dataproviders]
-7[resources] ---> 27[TestSuite]
-27[TestSuite] ---> 28[IndividualTestSuite]
-28[IndividualTestSuite] ---> 31[DropdownTestSuite]
-28[IndividualTestSuite] ---> 32[DynamicControlsTestSuite]
-28[IndividualTestSuite] ---> 33[DynamicLoadingTestSuite]
-27[TestSuite] ---> 34[RegressionTestSuite]
-27[TestSuite] ---> 35[SmokeTestSuite]
+22[com.herokuapp.theinternet] ---> 26[entryaddtests]
+7[resources] ---> 27[dataproviders]
+7[resources] ---> 28[TestSuite]
+28[TestSuite] ---> 29[IndividualTestSuite]
+29[IndividualTestSuite] ---> 32[DropdownTestSuite]
+29[IndividualTestSuite] ---> 33[DynamicControlsTestSuite]
+29[IndividualTestSuite] ---> 34[DynamicLoadingTestSuite]
+28[TestSuite] ---> 35[RegressionTestSuite]
+28[TestSuite] ---> 36[SmokeTestSuite]
 ```
