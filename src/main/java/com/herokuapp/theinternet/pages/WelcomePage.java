@@ -11,6 +11,7 @@ public class WelcomePage extends BasePageObject {
     protected By dynamicControlsLinkLocator = By.linkText("Dynamic Controls");
     protected By dynamicLoadingLinkLocator = By.linkText("Dynamic Loading");
     protected By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
+    protected By entryAdLinkLocator = By.linkText("Entry Ad");
 
     public WelcomePage(WebDriver driver, Logger log) { super(driver, log); }
 
@@ -45,6 +46,13 @@ public class WelcomePage extends BasePageObject {
         log.info("Open Multiple Windows page");
         click(multipleWindowsLinkLocator);
         return new MultipleWindowsPage(driver, log);
+    }
+
+    //Open Entry Add page
+    public EntryAdPage clickEntryAdLink() {
+        log.info("Open Entry Ad page");
+        click(entryAdLinkLocator);
+        return new EntryAdPage(driver, log);
     }
 
 }
