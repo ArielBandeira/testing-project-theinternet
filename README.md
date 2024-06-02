@@ -67,19 +67,24 @@ graph
 10[pages] ---> 19[DynamicControlsPage]
 10[pages] ---> 20[DynamicLoadingPage]
 10[pages] ---> 21[MultipleWindowsPage]
-10[pages] ---> 22[EntryAddPage]
+10[pages] ---> 22[EntryAdPage]
 6[java] ---> 23[com.herokuapp.theinternet]
 23[com.herokuapp.theinternet] ---> 24[dropdowntests]
 23[com.herokuapp.theinternet] ---> 25[dynamiccontrolstests]
 23[com.herokuapp.theinternet] ---> 26[dynamicloadingtests]
-23[com.herokuapp.theinternet] ---> 27[entryaddtests]
+23[com.herokuapp.theinternet] ---> 27[entryadtests]
 7[resources] ---> 28[dataproviders]
 7[resources] ---> 29[TestSuite]
 29[TestSuite] ---> 30[IndividualTestSuite]
 30[IndividualTestSuite] ---> 33[DropdownTestSuite]
 30[IndividualTestSuite] ---> 34[DynamicControlsTestSuite]
 30[IndividualTestSuite] ---> 35[DynamicLoadingTestSuite]
-30[IndividualTestSuite] ---> 36[EntryAddTestSuite]
+30[IndividualTestSuite] ---> 36[EntryAdTestSuite]
 29[TestSuite] ---> 37[RegressionTestSuite]
 29[TestSuite] ---> 38[SmokeTestSuite]
 ```
+
+## TO DO
+- Refactor code so Welcome Page is opened before every test
+- Add error handling
+- Add random generated text for input or csv file feeders
