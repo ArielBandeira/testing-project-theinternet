@@ -55,4 +55,9 @@ public class WelcomePage extends BasePageObject {
         return new EntryAdPage(driver, log);
     }
 
+    public EntryAdModalWindowPage entryAdModalPage() {
+        log.info("Open Entry Ad Modal Window");
+        return new EntryAdModalWindowPage(driver, log);
+    }
+
 }
