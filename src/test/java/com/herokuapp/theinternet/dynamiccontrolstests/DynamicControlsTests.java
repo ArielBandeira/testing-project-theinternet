@@ -34,6 +34,12 @@ public class DynamicControlsTests extends TestUtilities {
     @Test
     public void checkboxAndRemoveTest() {
         SoftAssert softAssert = new SoftAssert();
+
+        //TODO
+        // LOADING THE WELCOME PAGE IN EVERY TEST IS NOT GOOD
+        // LETS TRY TO MOVE THE WELCOME PAGE OPENING TO A BASE CLASS FILE
+        // MAYBE TO THE TEST LISTENER FILE AND ADD IT ON THE BEFORE TEST ANNOTATION
+
         //Open Welcome Page
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();

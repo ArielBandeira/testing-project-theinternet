@@ -5,14 +5,17 @@ import com.herokuapp.theinternet.pages.DynamicLoadingPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class DynamicLoadingTests extends TestUtilities {
 
-    private By exampleOnePageLocator = By.xpath("//a[@href='/dynamic_loading/1']");
-    private By exampleTwoPageLocator = By.xpath("//a[@href='/dynamic_loading/2']");
-    private By startButtonLocator = By.tagName("button");
-    private By textLocator = By.id("finish");
+    //TODO
+    // MOVE ALL LOCATORS TO THE PAGE CLASS
+    // change comments on page class to javadoc
+
+    private final By exampleOnePageLocator = By.xpath("//a[@href='/dynamic_loading/1']");
+    private final By exampleTwoPageLocator = By.xpath("//a[@href='/dynamic_loading/2']");
+    private final By startButtonLocator = By.tagName("button");
+    private final By textLocator = By.id("finish");
 
     @Test
     //Example 1 test

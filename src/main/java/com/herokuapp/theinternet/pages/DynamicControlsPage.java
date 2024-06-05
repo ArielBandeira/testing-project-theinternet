@@ -13,12 +13,14 @@ import java.time.Duration;
 
 public class DynamicControlsPage extends BasePageObject {
 
-    private By checkboxLocator = By.xpath("//input[@type='checkbox']");
-    private By textInputLocator = By.xpath("//input[@type='text']");
-    private By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
-    private By enableDisableButtonLocator = By.xpath("//form[@id='input-example']/button[@type='button']");
+    //TODO
+    // MAKE ALL LOCATORS FINAL
+    private final By checkboxLocator = By.xpath("//input[@type='checkbox']");
+    private final By textInputLocator = By.xpath("//input[@type='text']");
+    private final By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
+    private final By enableDisableButtonLocator = By.xpath("//form[@id='input-example']/button[@type='button']");
 
-    private By textInputMessageLocator = By.xpath("//*[@id='message']");
+    private final By textInputMessageLocator = By.xpath("//*[@id='message']");
 
     public DynamicControlsPage(WebDriver driver, Logger log) { super(driver, log); }
 
