@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="EntryAdTestSuite" verbose="1" thread-count="2" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.herokuapp.theinternet.base.TestListener" />
+    </listeners>
+
+    <test name="EntryAdTest">
+        <classes>
+            <class name="com.herokuapp.theinternet.entryadtests.EntryAdTests">
+                <methods>
+                    <include name="checkModalTitle"/>
+                    <include name="checkModalText"/>
+                    <include name="checkCloseButton"/>
+                    <include name="checkIfModalIsReOpened"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
