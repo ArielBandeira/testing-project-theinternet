@@ -17,7 +17,13 @@ public class BaseTest {
     protected String testName;
     protected String testMethodName;
 
-    //SetUp
+
+    /**
+     * Set up browser before each test
+     *
+     * @param method
+     * @param ctx
+     */
     @BeforeMethod( alwaysRun = true )
     public void setUp(Method method, ITestContext ctx) {
         String testName = ctx.getCurrentXmlTest().getName();
@@ -31,7 +37,9 @@ public class BaseTest {
         this.testMethodName = method.getName();
     }
 
-    //TearDown
+    /**
+     * Quit browser after test is finished
+     */
     @AfterMethod( alwaysRun = true )
     public void tearDown() {
         log.info("Close browser");

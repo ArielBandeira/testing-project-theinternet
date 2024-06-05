@@ -10,7 +10,10 @@ import java.util.Date;
 
 public class TestUtilities extends BaseTest {
 
-    //Sleep
+    /**
+     * Sleep test for x milliseconds
+     * @param millis
+     */
     protected void sleep(long millis) {
         try {
             Thread.sleep(millis);
@@ -19,7 +22,10 @@ public class TestUtilities extends BaseTest {
         }
     }
 
-    //Take screenshot
+    /**
+     * Take screenshot of page
+     * @param fileName
+     */
     protected void takeScreenshot(String fileName) {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
@@ -44,12 +50,18 @@ public class TestUtilities extends BaseTest {
 
     }
 
-    //Get today's date in yyyyMMdd format
+    /**
+     * Get today's date in yyyyMMdd format
+     * @return
+     */
     private static String getTodaysDate() {
         return (new SimpleDateFormat("yyyyMMdd").format(new Date()));
     }
 
-    //Get current time in HHmmssSSS
+    /**
+     * Get current time in HHmmssSSS
+     * @return
+     */
     private static String getSystemTime() {
         return (new SimpleDateFormat("HHmmssSSS").format(new Date()));
     }

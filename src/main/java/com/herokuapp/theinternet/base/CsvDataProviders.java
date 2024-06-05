@@ -16,6 +16,11 @@ import com.opencsv.CSVReader;
 
 public class CsvDataProviders {
 
+    /**
+     * CSV reader
+     * @param method
+     * @return list
+     */
     @DataProvider(name = "csvReader")
     public static Iterator<Object[]> csvReader(Method method) {
         List<Object[]> list = new ArrayList<>();

@@ -6,14 +6,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserFactory {
 
-    private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-    private Logger log;
+    private final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+    private final Logger log;
 
+    /**
+     * Initiate logger
+     * @param log
+     */
     public BrowserFactory(Logger log) {
         this.log = log;
     }
 
-    //Create driver
+    /**
+     * Initiate browser driver
+     * @return driver
+     */
     public WebDriver createDriver() {
         driver.set(new ChromeDriver());
         return driver.get();

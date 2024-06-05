@@ -10,8 +10,17 @@ public class DropdownPage extends BasePageObject {
 
     protected By dropdownOptionLocator = By.id("dropdown");
 
+    /**
+     * Constructor
+     * @param driver
+     * @param log
+     */
     public DropdownPage(WebDriver driver, Logger log) { super(driver, log); }
 
+    /**
+     * Pick an option from dropdown
+     * @param options
+     */
     public void pickOption(String options) {
         log.info("Select option: " + options + " from dropdown");
         WebElement dropdownOption = find(dropdownOptionLocator);
@@ -19,6 +28,10 @@ public class DropdownPage extends BasePageObject {
         dropdownOptionLocator.selectByValue(options);
     }
 
+    /**
+     * Verify option selected
+     * @return selectedOption
+     */
     public String getSelectedOption() {
         log.info("Return selected option");
         WebElement dropdownOption = find(dropdownOptionLocator);

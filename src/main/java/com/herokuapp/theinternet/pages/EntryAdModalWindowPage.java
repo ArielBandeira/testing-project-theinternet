@@ -7,6 +7,11 @@ import org.openqa.selenium.WebElement;
 
 public class EntryAdModalWindowPage extends EntryAdPage {
 
+    /**
+     * Constructor
+     * @param driver
+     * @param log
+     */
     public EntryAdModalWindowPage(WebDriver driver, Logger log) {
         super(driver, log);
     }
