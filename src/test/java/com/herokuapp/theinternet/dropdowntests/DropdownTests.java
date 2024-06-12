@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 public class DropdownTests extends TestUtilities {
 
-    @Test( dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class )
+    @Test( dataProvider = "csvDataProvider", dataProviderClass = CsvDataProviders.class )
     public void pickOptionTest(Map<String, String> testData) {
         SoftAssert softAssert = new SoftAssert();
 
@@ -42,7 +42,7 @@ public class DropdownTests extends TestUtilities {
 
     }
 
-    @Test( dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class )
+    @Test( dataProvider = "csvDataProvider", dataProviderClass = CsvDataProviders.class )
     public void pickWrongOptionTest(Map<String, String> testData) {
         SoftAssert softAssert = new SoftAssert();
 
