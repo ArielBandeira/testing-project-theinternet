@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet.pages;
 
+import com.herokuapp.theinternet.pages.windows.EntryAdModalWindowPage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,20 +11,32 @@ import java.time.Duration;
 
 public class EntryAdPage extends BasePageObject {
 
+    /**
+     * Constructor
+     * @param driver
+     * @param log
+     */
     public EntryAdPage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
+    //region Variables
     private final By modalLocator = By.cssSelector("div[id='modal']");
 
     private final By reOpenModalLinkLocator = By.xpath("//*[@id='restart-ad']");
+    //endregion
 
-
+    //region Elements
     /**
      * Check if modal window is displayed
      */
     public boolean isModalDisplayed() {
         log.info("Check if modal window is displayed");
+        try {
+            waitFor(ExpectedConditions.visibilityOfElementLocated(modalLocator), Duration.ofSeconds(3));
+        } catch (Exception e) {
+            return false;
+        }
         WebElement modalWindow = find(modalLocator);
         return modalWindow.isDisplayed();
     }
@@ -42,4 +55,15 @@ public class EntryAdPage extends BasePageObject {
             log.info("Modal is not displayed");
         }
     }
+
+    /**
+     * Initiate Entry Ad modal
+     * @return entryAdModalPage
+     */
+    public EntryAdModalWindowPage entryAdModalPage() {
+        log.info("Open Entry Ad Modal Window");
+        return new EntryAdModalWindowPage(driver, log);
+    }
+    //endregion
+
 }

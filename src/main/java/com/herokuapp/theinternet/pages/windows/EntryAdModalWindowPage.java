@@ -1,5 +1,6 @@
-package com.herokuapp.theinternet.pages;
+package com.herokuapp.theinternet.pages.windows;
 
+import com.herokuapp.theinternet.pages.EntryAdPage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
