@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet.base;
 
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.Logger;
@@ -17,12 +18,12 @@ public class BaseTest {
     protected String testName;
     protected String testMethodName;
 
-
     /**
      * Set up browser before each test
      *
      * @param method
      * @param ctx
+     * @return
      */
     @BeforeMethod( alwaysRun = true )
     public void setUp(Method method, ITestContext ctx) {
@@ -35,6 +36,14 @@ public class BaseTest {
         this.testSuiteName = ctx.getSuite().getName();
         this.testName = testName;
         this.testMethodName = method.getName();
+
+        openWelcomePage();
+    }
+
+    public WelcomePage openWelcomePage() {
+        WelcomePage welcomePage = new WelcomePage(driver, log);
+        welcomePage.openPage();
+        return welcomePage;
     }
 
     /**
@@ -45,5 +54,4 @@ public class BaseTest {
         log.info("Close browser");
         driver.quit();
     }
-
 }
