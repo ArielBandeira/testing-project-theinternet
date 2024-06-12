@@ -6,12 +6,25 @@
         <listener class-name="com.herokuapp.theinternet.base.TestListener" />
     </listeners>
 
-    <test name="EntryAdTest">
+    <test name="EntryAdTestText">
         <classes>
             <class name="com.herokuapp.theinternet.entryadtests.EntryAdTests">
                 <methods>
                     <include name="checkModalTitle"/>
                     <include name="checkModalText"/>
+                    <exclude name="checkCloseButton"/>
+                    <exclude name="checkIfModalIsReOpened"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EntryAdTestModal">
+        <classes>
+            <class name="com.herokuapp.theinternet.entryadtests.EntryAdTests">
+                <methods>
+                    <exclude name="checkModalTitle"/>
+                    <exclude name="checkModalText"/>
                     <include name="checkCloseButton"/>
                     <include name="checkIfModalIsReOpened"/>
                 </methods>
