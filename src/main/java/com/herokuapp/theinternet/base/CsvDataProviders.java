@@ -1,8 +1,5 @@
 package com.herokuapp.theinternet.base;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,8 +18,8 @@ public class CsvDataProviders {
      * @param method
      * @return list
      */
-    @DataProvider(name = "csvReader")
-    public static Iterator<Object[]> csvReader(Method method) {
+    @DataProvider(name = "csvDataProvider")
+    public static Iterator<Object[]> csvDataProvider(Method method) {
         List<Object[]> list = new ArrayList<>();
         String pathname = "src" + File.separator + "test" + File.separator + "resources" + File.separator
                 + "dataproviders" + File.separator + method.getDeclaringClass().getSimpleName() + File.separator
