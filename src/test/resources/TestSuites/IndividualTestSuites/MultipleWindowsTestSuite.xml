@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="MultipleWindowsTestSuite" verbose="1" thread-count="2" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.herokuapp.theinternet.base.TestListener" />
+    </listeners>
+
+    <test name="clickNewWindowLink">
+        <classes>
+            <class name="com.herokuapp.theinternet.multiplewindowstests.MultipleWindowsTests">
+                <methods>
+                    <include name="clickNewWindowLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

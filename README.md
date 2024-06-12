@@ -30,6 +30,7 @@
 	 - [ ] [Dynamic Controls](https://the-internet.herokuapp.com/dynamic_controls)
 	 - [ ] [Dynamic Loading](https://the-internet.herokuapp.com/dynamic_loading)
      - [ ] [Multiple Windows](https://the-internet.herokuapp.com/windows)
+     - [ ] [Entry Ad](https://the-internet.herokuapp.com/entry_ad)
 
 ## Run Test Suites
 This project uses XML test suites. To run the test suites run configuration should be created first:
@@ -50,7 +51,7 @@ graph
 1[src] ---> 3[test]
 2[main] ---> 4[java]
 2[main] ---> 5[resources]
-5[resources] ---> 36[files]
+5[resources] ---> 39[files]
 3[test] ---> 6[java]
 3[test] ---> 7[resources]
 4[java] ---> 8[com.herokuapp.theinternet]
@@ -66,16 +67,24 @@ graph
 10[pages] ---> 19[DynamicControlsPage]
 10[pages] ---> 20[DynamicLoadingPage]
 10[pages] ---> 21[MultipleWindowsPage]
-6[java] ---> 22[com.herokuapp.theinternet]
-22[com.herokuapp.theinternet] ---> 23[dropdowntests]
-22[com.herokuapp.theinternet] ---> 24[dynamiccontrolstests]
-22[com.herokuapp.theinternet] ---> 25[dynamicloadingtests]
-7[resources] ---> 26[dataproviders]
-7[resources] ---> 27[TestSuite]
-27[TestSuite] ---> 28[IndividualTestSuite]
-28[IndividualTestSuite] ---> 31[DropdownTestSuite]
-28[IndividualTestSuite] ---> 32[DynamicControlsTestSuite]
-28[IndividualTestSuite] ---> 33[DynamicLoadingTestSuite]
-27[TestSuite] ---> 34[RegressionTestSuite]
-27[TestSuite] ---> 35[SmokeTestSuite]
+10[pages] ---> 22[EntryAdPage]
+6[java] ---> 23[com.herokuapp.theinternet]
+23[com.herokuapp.theinternet] ---> 24[dropdowntests]
+23[com.herokuapp.theinternet] ---> 25[dynamiccontrolstests]
+23[com.herokuapp.theinternet] ---> 26[dynamicloadingtests]
+23[com.herokuapp.theinternet] ---> 27[entryadtests]
+7[resources] ---> 28[dataproviders]
+7[resources] ---> 29[TestSuite]
+29[TestSuite] ---> 30[IndividualTestSuite]
+30[IndividualTestSuite] ---> 33[DropdownTestSuite]
+30[IndividualTestSuite] ---> 34[DynamicControlsTestSuite]
+30[IndividualTestSuite] ---> 35[DynamicLoadingTestSuite]
+30[IndividualTestSuite] ---> 36[EntryAdTestSuite]
+29[TestSuite] ---> 37[RegressionTestSuite]
+29[TestSuite] ---> 38[SmokeTestSuite]
 ```
+
+## TO DO
+- Refactor code so Welcome Page is opened before every test
+- Add error handling
+- Add random generated text for input or csv file feeders

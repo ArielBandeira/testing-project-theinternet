@@ -21,61 +21,102 @@ public class BasePageObject {
     protected WebDriver driver;
     protected Logger log;
 
+    /**
+     * Constructor
+     * @param driver
+     * @param log
+     */
     public BasePageObject(WebDriver driver, Logger log) {
         this.driver = driver;
         this.log = log;
     }
 
-    //Open page with given URL
+    /**
+     * Open page with given URL
+     * @param url
+     */
     protected void openUrl(String url) {
         driver.get(url);
     }
 
-    //Read page url
+    /**
+     * Read page url
+     * @return
+     */
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
-    //Read page title
+    /**
+     * Read page title
+     * @return
+     */
     public String getCurrentPageTitle() {
         return driver.getTitle();
     }
 
-    //Type text
+    /**
+     * Type text
+     * @param text
+     * @param locator
+     */
     protected void type(String text, By locator) {
         waitForVisibilityOf(locator, Duration.ofSeconds(5));
         find(locator).sendKeys(text);
     }
 
-    //Press key on locator
+    /**
+     * Press key on locator
+     * @param locator
+     * @param key
+     */
     public void pressKey(By locator, Keys key) {
         find(locator).sendKeys(key);
     }
 
-    //Find list of elements
+    /**
+     * Find list of elements
+     * @param locator
+     * @return
+     */
     protected List<WebElement> findAll(By locator) {
         return driver.findElements(locator);
     }
 
-    //Find element
+    /**
+     * Find element
+     * @param locator
+     * @return
+     */
     protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
-    //Click on element
+    /**
+     * Click on element
+     * @param locator
+     */
     protected void click(By locator) {
         waitForVisibilityOf(locator, Duration.ofSeconds(5));
         find(locator).click();
     }
 
-    //Wait for specific ExpectedCondition for the given amount of time in seconds
+    /**
+     * Wait for specific ExpectedCondition for the given amount of time in seconds
+     * @param condition
+     * @param timeOut
+     */
     protected void waitFor(ExpectedCondition<WebElement> condition, Duration timeOut) {
         timeOut = timeOut != null ? timeOut : Duration.ofSeconds(30);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         wait.until(condition);
     }
 
-    //Wait for given number of seconds for element with given locator to be visible on page
+    /**
+     * Wait for given number of seconds for element with given locator to be visible on page
+     * @param locator
+     * @param timeOut
+     */
     protected void waitForVisibilityOf(By locator, Duration ... timeOut) {
         int attempts = 0;
         while (attempts < 2) {
@@ -87,6 +128,10 @@ public class BasePageObject {
         }
     }
 
+    /**
+     * Switch focus to new windows with given title
+     * @param windowTitle
+     */
     protected void switchToWindowWithTitle(String windowTitle) {
         //Store the ID of the original window
         String originalWindow = driver.getWindowHandle();

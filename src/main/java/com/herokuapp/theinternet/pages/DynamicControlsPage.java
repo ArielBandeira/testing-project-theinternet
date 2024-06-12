@@ -13,21 +13,38 @@ import java.time.Duration;
 
 public class DynamicControlsPage extends BasePageObject {
 
-    private By checkboxLocator = By.xpath("//input[@type='checkbox']");
-    private By textInputLocator = By.xpath("//input[@type='text']");
-    private By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
-    private By enableDisableButtonLocator = By.xpath("//form[@id='input-example']/button[@type='button']");
+    //TODO
+    // MAKE ALL LOCATORS FINAL
+    private final By checkboxLocator = By.xpath("//input[@type='checkbox']");
+    private final By textInputLocator = By.xpath("//input[@type='text']");
+    private final By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
+    private final By enableDisableButtonLocator = By.xpath("//form[@id='input-example']/button[@type='button']");
 
-    private By textInputMessageLocator = By.xpath("//*[@id='message']");
+    private final By textInputMessageLocator = By.xpath("//*[@id='message']");
 
+    /**
+     * Constructor
+     * @param driver
+     * @param log
+     */
     public DynamicControlsPage(WebDriver driver, Logger log) { super(driver, log); }
 
+    /**
+     * Mark a checkbox option
+     * TODO this could be a base page function
+     */
     public void markCheckbox() {
         log.info("Mark checkbox");
         WebElement checkbox = find(checkboxLocator);
         checkbox.click();
     }
 
+    /**
+     * Verify if checkbox is marked
+     * @return boolean
+     * True if marked
+     * False if not marked
+     */
     public boolean isCheckboxMarked() {
         WebElement checkbox = find(checkboxLocator);
         log.info("Verify if checkbox is marked");
@@ -40,11 +57,19 @@ public class DynamicControlsPage extends BasePageObject {
         }
     }
 
+    /**
+     * Click 'Remove' button
+     */
     public void clickRemoveButton() {
         log.info("Click 'Remove' button");
         click(removeButtonLocator);
     }
 
+    /**
+     * Verify if checkbox is displayed
+     * @return String
+     * TODO this can be done more elegantly
+     */
     public String verifyIsCheckboxDisplayed() {
         log.info("Verify if checkbox is displayed");
         try {
@@ -57,6 +82,9 @@ public class DynamicControlsPage extends BasePageObject {
         }
     }
 
+    /**
+     * Click 'Enable/Disable' button
+     */
     public void clickEnableDisableButton() {
         log.info("Clicking on 'Enable/Disable' button");
         waitFor(ExpectedConditions.elementToBeClickable(enableDisableButtonLocator), Duration.ofSeconds(30));
@@ -64,6 +92,12 @@ public class DynamicControlsPage extends BasePageObject {
         button.click();
     }
 
+    /**
+     * Verify if text input element is displayed
+     * @return boolean
+     * True if enabled
+     * False if disabled
+     */
     public Boolean isTextInputEnabled() {
         log.info("Verify if text input is enabled");
         WebElement textInput = find(textInputLocator);
@@ -79,6 +113,10 @@ public class DynamicControlsPage extends BasePageObject {
         }
     }
 
+    /**
+     * Type on text input element
+     * @param text
+     */
     public void typeOnTextInputTextbox(String text) {
         log.info("Writing on text input: " + text);
         WebElement input = find(textInputLocator);
@@ -86,12 +124,24 @@ public class DynamicControlsPage extends BasePageObject {
         type(text, textInputLocator);
     }
 
+    /**
+     * Get text on text input element
+     * @return
+     */
     public String getTextInputText() {
         String textOnTextInput = find(textInputLocator).getAttribute("value");
         log.info("Text on text input: " + textOnTextInput);
         return textOnTextInput;
     }
 
+    /**
+     * Check if text on status message element is the expected
+     * @param expectedMessage
+     * @return boolean
+     * True if text is the expected
+     * False if is not the expected
+     * TODO this can be done more elegantly
+     */
     public boolean checkTextInputStatusMessage(String expectedMessage) {
         log.info("Verify if text input status message is the expected");
         String actualMessage = find(textInputMessageLocator).getText();
