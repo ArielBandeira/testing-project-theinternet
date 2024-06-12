@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class MultipleWindowsPage extends BasePageObject {
 
+    private final By clickHereLinkLocator = By.xpath("//a[@href='/windows/new']");
+
     /**
      * Constructor
      * @param driver
@@ -17,18 +19,8 @@ public class MultipleWindowsPage extends BasePageObject {
 
     /**
      * Click on 'Click Here' link to open new tab
-     * @param locator
      */
-    public void clickNewWindowLink(By locator) {
-        click(locator);
-    }
-
-    /**
-     * Switch to new window
-     * @return new window page
-     */
-    public NewWindowPage switchToNewWindow(){
-        switchToWindowWithTitle("New Window");
-        return new NewWindowPage(driver, log);
+    public void clickNewWindowLink() {
+        click(clickHereLinkLocator);
     }
 }
