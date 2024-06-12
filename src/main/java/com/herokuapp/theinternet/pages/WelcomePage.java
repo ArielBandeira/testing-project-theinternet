@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet.pages;
 
+import com.herokuapp.theinternet.pages.windows.EntryAdModalWindowPage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -69,6 +70,14 @@ public class WelcomePage extends BasePageObject {
     }
 
     /**
+     * Open New Window page from Multiple Windows page
+     */
+    public NewWindowPage switchToNewWindow(){
+        switchToWindowWithTitle("New Window");
+        return new NewWindowPage(driver, log);
+    }
+
+    /**
      * Open Entry Add page
      * @return entryAdPage
      */
@@ -77,14 +86,4 @@ public class WelcomePage extends BasePageObject {
         click(entryAdLinkLocator);
         return new EntryAdPage(driver, log);
     }
-
-    /**
-     * Initiate Entry Ad modal
-     * @return entryAdModalPage
-     */
-    public EntryAdModalWindowPage entryAdModalPage() {
-        log.info("Open Entry Ad Modal Window");
-        return new EntryAdModalWindowPage(driver, log);
-    }
-
 }
