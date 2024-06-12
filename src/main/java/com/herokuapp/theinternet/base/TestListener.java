@@ -2,12 +2,15 @@ package com.herokuapp.theinternet.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 
 public class TestListener implements ITestListener {
 
+    WebDriver driver;
     Logger log;
     String testName;
     String testMethodName;
@@ -74,5 +77,14 @@ public class TestListener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         log.info("[ALL " + testName + " FINISHED]");
+    }
+
+    /**
+     * Quit browser after test is finished
+     */
+    @AfterMethod( alwaysRun = true )
+    public void tearDown() {
+        log.info("Close browser");
+        driver.quit();
     }
 }
