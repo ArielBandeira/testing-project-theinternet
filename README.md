@@ -88,4 +88,3 @@ graph
 - Refactor code so Welcome Page is opened before every test
 - Add error handling
 - Add random generated text for input or csv file feeders
-- Change comments to javadoc
