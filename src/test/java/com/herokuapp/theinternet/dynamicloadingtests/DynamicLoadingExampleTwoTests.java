@@ -1,7 +1,7 @@
 package com.herokuapp.theinternet.dynamicloadingtests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
-import com.herokuapp.theinternet.pages.DynamicLoadingExampleOnePage;
+import com.herokuapp.theinternet.pages.DynamicLoadingExampleTwoPage;
 import com.herokuapp.theinternet.pages.DynamicLoadingPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DynamicLoadingExampleOneTests extends TestUtilities {
+public class DynamicLoadingExampleTwoTests extends TestUtilities {
 
     //region Variables
     WelcomePage welcomePage;
@@ -21,29 +21,30 @@ public class DynamicLoadingExampleOneTests extends TestUtilities {
     public void checkPageTitle() throws IOException {
         welcomePage = new WelcomePage(driver, log);
         DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
-        DynamicLoadingExampleOnePage dynamicOne = dynamicLoadingPage.goToExampleOnePage();
+        DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         log.info("Get current page title");
-        String actualTitle = dynamicOne.getPageTitle();
+        String actualTitle = dynamicTwo.getPageTitle();
 
         //Data variables
         ArrayList<String> options = readCSVFile();
 
         log.info("Verify if page title matches the expected");
         Assert.assertTrue(options.contains(actualTitle), "Actual page title does not match expected");
+
     }
 
     @Test
     public void verifyDynamicText() throws IOException {
         welcomePage = new WelcomePage(driver, log);
         DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
-        DynamicLoadingExampleOnePage dynamicOne = dynamicLoadingPage.goToExampleOnePage();
+        DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         log.info("Click 'Start' button");
-        dynamicOne.pressStartButton();
+        dynamicTwo.pressStartButton();
 
         log.info("Get current page text");
-        String actualText = dynamicOne.getDynamicText();
+        String actualText = dynamicTwo.getDynamicText();
 
         //Data variables
         ArrayList<String> options = readCSVFile();
@@ -56,12 +57,12 @@ public class DynamicLoadingExampleOneTests extends TestUtilities {
     public void verifyPageUrl() throws IOException {
         welcomePage = new WelcomePage(driver, log);
         DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
-        DynamicLoadingExampleOnePage dynamicOne = dynamicLoadingPage.goToExampleOnePage();
+        DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         String pathname = "src/test/resources/dataproviders/Shared/" + testMethodName + ".csv";
 
         log.info("Get current page URL");
-        String actualURL = dynamicOne.getCurrentUrl();
+        String actualURL = dynamicTwo.getCurrentUrl();
 
         //Data variables
         ArrayList<String> expectedURL = readCSVFileWithPath(pathname);

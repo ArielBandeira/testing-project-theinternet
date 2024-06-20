@@ -57,5 +57,6 @@ public class DynamicLoadingExampleOnePage extends BasePageObject {
         waitForVisibilityOf(pageDynamicTextLocator, Duration.ofSeconds(10));
         return find(pageDynamicTextLocator).getText();
     }
+
     //endregion
 }

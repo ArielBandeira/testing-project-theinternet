@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class DynamicLoadingPage extends BasePageObject {
 
+    private final By pageTitleLocator = By.xpath("//div[@class='example']/h3");
+
     private final By exampleOnePageLocator = By.xpath("//a[@href='/dynamic_loading/1']");
     private final By exampleTwoPageLocator = By.xpath("//a[@href='/dynamic_loading/2']");
 
@@ -17,9 +19,16 @@ public class DynamicLoadingPage extends BasePageObject {
     public DynamicLoadingPage(WebDriver driver, Logger log) { super(driver, log); }
 
     /**
+     * Get page title
+     * @return String pageTitle
+     */
+    public String getPageTitle(){
+        return find(pageTitleLocator).getText();
+    }
+
+    /**
      * Go to 'Example 1' page
-     *
-     * @return
+     * @return ExampleOnePage
      */
     public DynamicLoadingExampleOnePage goToExampleOnePage() {
         log.info("Opening Example 1 page");
@@ -27,12 +36,13 @@ public class DynamicLoadingPage extends BasePageObject {
         return new DynamicLoadingExampleOnePage(driver, log);
     }
 
-//    /**
-//     * Go to 'Example 2' page
-//     */
-//    public DynamicLoadingExampleTwoPage goToExampleTwoPage() {
-//        log.info("Opening Example 2 page");
-//        click(exampleTwoPageLocator);
-//        return new DynamicLoadingExampleTwoPage(driver, log);
-//    }
+    /**
+     * Go to 'Example 2' page
+     * @return ExampleTwoPage
+     */
+    public DynamicLoadingExampleTwoPage goToExampleTwoPage() {
+        log.info("Opening Example 2 page");
+        click(exampleTwoPageLocator);
+        return new DynamicLoadingExampleTwoPage(driver, log);
+    }
 }

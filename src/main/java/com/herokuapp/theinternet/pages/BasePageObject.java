@@ -41,7 +41,7 @@ public class BasePageObject {
 
     /**
      * Read page url
-     * @return
+     * @return currentURL
      */
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
@@ -49,9 +49,9 @@ public class BasePageObject {
 
     /**
      * Read page title
-     * @return
+     * @return pageTitle
      */
-    public String getCurrentPageTitle() {
+    public String getCurrentPageTabTitle() {
         return driver.getTitle();
     }
 
@@ -77,7 +77,7 @@ public class BasePageObject {
     /**
      * Find list of elements
      * @param locator
-     * @return
+     * @return list of elements
      */
     protected List<WebElement> findAll(By locator) {
         return driver.findElements(locator);
@@ -86,7 +86,7 @@ public class BasePageObject {
     /**
      * Find element
      * @param locator
-     * @return
+     * @return element
      */
     protected WebElement find(By locator) {
         return driver.findElement(locator);
@@ -151,4 +151,7 @@ public class BasePageObject {
         wait.until(titleIs(windowTitle));
     }
 
+    public Boolean verifyCurrentPageUrlIsExpected(String expectedPageUrl) {
+        return getCurrentUrl().contains(expectedPageUrl);
+    }
 }

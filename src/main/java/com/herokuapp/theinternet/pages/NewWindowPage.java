@@ -19,7 +19,7 @@ public class NewWindowPage extends BasePageObject {
      * @return windowTitle
      */
     public String getCurrentWindowTitle() {
-        return getCurrentPageTitle();
+        return getCurrentPageTabTitle();
     }
 
     /**
