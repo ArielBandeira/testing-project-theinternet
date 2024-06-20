@@ -13,8 +13,6 @@ import java.time.Duration;
 
 public class DynamicControlsPage extends BasePageObject {
 
-    //TODO
-    // MAKE ALL LOCATORS FINAL
     private final By checkboxLocator = By.xpath("//input[@type='checkbox']");
     private final By textInputLocator = By.xpath("//input[@type='text']");
     private final By removeButtonLocator = By.xpath("//form[@id='checkbox-example']/button[@type='button']");
