@@ -70,14 +70,6 @@ public class WelcomePage extends BasePageObject {
     }
 
     /**
-     * Open New Window page from Multiple Windows page
-     */
-    public NewWindowPage switchToNewWindow(){
-        switchToWindowWithTitle("New Window");
-        return new NewWindowPage(driver, log);
-    }
-
-    /**
      * Open Entry Add page
      * @return entryAdPage
      */
