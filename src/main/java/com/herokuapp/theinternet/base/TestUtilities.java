@@ -90,4 +90,19 @@ public class TestUtilities extends BaseTest {
         return list;
     }
 
+    public ArrayList<String> readCSVFileWithPath(String pathname) throws IOException {
+        File file = new File(pathname);
+        BufferedReader bufRdr;
+        bufRdr = new BufferedReader(new FileReader(file));
+        String record;
+        String url= null;
+        ArrayList<String> list = new ArrayList<String>();
+        while ((record = bufRdr.readLine()) != null)
+        {
+            String fields[] = record.split(",");
+            url= fields[0].toString();
+            list.add(record);
+        }
+        return list;
+    }
 }

@@ -19,8 +19,13 @@ public class MultipleWindowsPage extends BasePageObject {
 
     /**
      * Click on 'Click Here' link to open new tab
+     * @return newWindowPage
      */
-    public void clickNewWindowLink() {
+    public NewWindowPage clickNewWindowLink() {
+        log.info("Click on 'Click Here' link to open new tab");
         click(clickHereLinkLocator);
+        switchToWindowWithTitle("New Window");
+        return new NewWindowPage(driver, log);
     }
+
 }
