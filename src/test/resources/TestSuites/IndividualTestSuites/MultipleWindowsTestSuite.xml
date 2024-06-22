@@ -1,16 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="MultipleWindowsTestSuite" verbose="1" thread-count="2" parallel="tests">
+<suite name="MultipleWindowsTestSuite" verbose="1" thread-count="4" parallel="tests">
 
     <listeners>
         <listener class-name="com.herokuapp.theinternet.base.TestListener" />
     </listeners>
 
-    <test name="clickNewWindowLink">
+    <test name="MultipleWindowsTests">
         <classes>
             <class name="com.herokuapp.theinternet.multiplewindowstests.MultipleWindowsTests">
                 <methods>
-                    <include name="clickNewWindowLink"/>
+                    <include name="verifyNewWindowLinkOpensCorrectPageUrl"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NewWindowTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.multiplewindowstests.NewWindowTests">
+                <methods>
+                    <include name="verifyNewWindowTitle"/>
+                    <include name="verifyNewWindowTabTitle"/>
+                    <include name="verifyNewWindowUrl"/>
                 </methods>
             </class>
         </classes>
