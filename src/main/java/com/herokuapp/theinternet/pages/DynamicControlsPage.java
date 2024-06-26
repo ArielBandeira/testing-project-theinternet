@@ -29,12 +29,9 @@ public class DynamicControlsPage extends BasePageObject {
 
     /**
      * Mark a checkbox option
-     * TODO this could be a base page function
      */
     public void markCheckbox() {
-        log.info("Mark checkbox");
-        WebElement checkbox = find(checkboxLocator);
-        checkbox.click();
+        markCheckboxElement(checkboxLocator);
     }
 
     /**
@@ -66,12 +63,11 @@ public class DynamicControlsPage extends BasePageObject {
     /**
      * Verify if checkbox is displayed
      * @return String
-     * TODO this can be done more elegantly
      */
     public String verifyIsCheckboxDisplayed() {
         log.info("Verify if checkbox is displayed");
         try {
-            find(checkboxLocator);
+            waitForVisibilityOf(checkboxLocator);
             log.info("Checkbox is displayed");
             return "Checkbox is displayed";
         } catch (NoSuchElementException e) {
@@ -124,7 +120,7 @@ public class DynamicControlsPage extends BasePageObject {
 
     /**
      * Get text on text input element
-     * @return
+     * @return text
      */
     public String getTextInputText() {
         String textOnTextInput = find(textInputLocator).getAttribute("value");
@@ -138,13 +134,13 @@ public class DynamicControlsPage extends BasePageObject {
      * @return boolean
      * True if text is the expected
      * False if is not the expected
-     * TODO this can be done more elegantly
      */
-    public boolean checkTextInputStatusMessage(String expectedMessage) {
-        log.info("Verify if text input status message is the expected");
+    public boolean isTextInputStatusMessageCorrect(String expectedMessage) {
+        log.info("Verify if text input status message matches the expected value");
         String actualMessage = find(textInputMessageLocator).getText();
-        log.info("Text input status message: " + actualMessage);
+        log.info("Actual text input status message: " + actualMessage);
         return !actualMessage.equals(expectedMessage);
     }
+
 
 }

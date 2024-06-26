@@ -154,4 +154,11 @@ public class BasePageObject {
     public Boolean verifyCurrentPageUrlIsExpected(String expectedPageUrl) {
         return getCurrentUrl().contains(expectedPageUrl);
     }
+
+    public void markCheckboxElement(By checkboxLocator) {
+        log.info("Mark checkbox");
+        WebElement checkbox = find(checkboxLocator);
+        checkbox.click();
+    }
+
 }
