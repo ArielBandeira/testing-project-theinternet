@@ -35,11 +35,6 @@ public class DynamicControlsTests extends TestUtilities {
     public void checkboxAndRemoveTest() {
         SoftAssert softAssert = new SoftAssert();
 
-        //TODO
-        // LOADING THE WELCOME PAGE IN EVERY TEST IS NOT GOOD
-        // LETS TRY TO MOVE THE WELCOME PAGE OPENING TO A BASE CLASS FILE
-        // MAYBE TO THE TEST LISTENER FILE AND ADD IT ON THE BEFORE TEST ANNOTATION
-
         //Open Welcome Page
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
@@ -83,7 +78,7 @@ public class DynamicControlsTests extends TestUtilities {
         softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled());
 
         //Verify if text says "It's enabled!"
-        softAssert.assertTrue(dynamicControlsPage.checkTextInputStatusMessage(expectedEnabledMessage));
+        softAssert.assertTrue(dynamicControlsPage.isTextInputStatusMessageCorrect(expectedEnabledMessage));
 
         //Add text to text input
         String text = "I'm Commander Shepard and this is my favorite test on the Citadel!";
@@ -96,7 +91,7 @@ public class DynamicControlsTests extends TestUtilities {
         softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled());
 
         //Verify if text says "It's disabled!"
-        softAssert.assertTrue(dynamicControlsPage.checkTextInputStatusMessage(expectedDisabledMessage));
+        softAssert.assertTrue(dynamicControlsPage.isTextInputStatusMessageCorrect(expectedDisabledMessage));
 
         //Verify if the text in the text input is the expected
         String textOnInput = String.valueOf(dynamicControlsPage.getTextInputText());
