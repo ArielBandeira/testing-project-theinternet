@@ -18,8 +18,7 @@ public class NewWindowTests extends TestUtilities {
     @Test
     public void verifyNewWindowTitle() throws IOException {
 
-        welcomePage = new WelcomePage(driver, log);
-        MultipleWindowsPage multipleWindowsPage = welcomePage.clickMultipleWindowsLink();
+        MultipleWindowsPage multipleWindowsPage = openWelcomePage().clickMultipleWindowsLink();
         NewWindowPage newWindowPage = multipleWindowsPage.clickNewWindowLink();
 
         String currentPageTitle = newWindowPage.getCurrentPageTitle();
@@ -33,8 +32,7 @@ public class NewWindowTests extends TestUtilities {
     @Test
     public void verifyNewWindowTabTitle() throws IOException {
 
-        welcomePage = new WelcomePage(driver, log);
-        MultipleWindowsPage multipleWindowsPage = welcomePage.clickMultipleWindowsLink();
+        MultipleWindowsPage multipleWindowsPage = openWelcomePage().clickMultipleWindowsLink();
         NewWindowPage newWindowPage = multipleWindowsPage.clickNewWindowLink();
 
         String currentPageTitle = newWindowPage.getCurrentWindowTitle();
@@ -48,8 +46,7 @@ public class NewWindowTests extends TestUtilities {
     @Test
     public void verifyNewWindowUrl() throws IOException {
 
-        welcomePage = new WelcomePage(driver, log);
-        MultipleWindowsPage multipleWindowsPage = welcomePage.clickMultipleWindowsLink();
+        MultipleWindowsPage multipleWindowsPage = openWelcomePage().clickMultipleWindowsLink();
         NewWindowPage newWindowPage = multipleWindowsPage.clickNewWindowLink();
 
         String currentPageTitle = newWindowPage.getCurrentPageUrl();

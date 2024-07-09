@@ -6,6 +6,8 @@ import com.herokuapp.theinternet.pages.DropdownPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+
 import java.util.Map;
 import java.util.NoSuchElementException;
 
@@ -18,14 +20,10 @@ public class DropdownTests extends TestUtilities {
         //Data variables
         String option = testData.get("options");
 
-        log.info("Starting test picking option #" + option + " from dropdown");
-
-        //Open Welcome Page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
+        logMessage(option);
 
         //Go to Dropdown Page
-        DropdownPage dropdownPage = welcomePage.clickDropdownLink();
+        DropdownPage dropdownPage = openWelcomePage().clickDropdownLink();
 
         //Pick one of the options
         dropdownPage.pickOption(option);
@@ -49,14 +47,10 @@ public class DropdownTests extends TestUtilities {
         //Data variables
         String option = testData.get("options");
 
-        log.info("Starting test picking option #" + option + " from dropdown");
-
-        //Open Welcome Page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
+        logMessage(option);
 
         //Go to Dropdown Page
-        DropdownPage dropdownPage = welcomePage.clickDropdownLink();
+        DropdownPage dropdownPage = openWelcomePage().clickDropdownLink();
 
         //Pick one of the options
         try {
@@ -77,4 +71,7 @@ public class DropdownTests extends TestUtilities {
 
     }
 
+    public void logMessage(String option) {
+        log.info("Starting test picking option #{} from dropdown", option);
+    }
 }
