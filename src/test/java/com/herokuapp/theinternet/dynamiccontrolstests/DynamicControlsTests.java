@@ -17,12 +17,9 @@ public class DynamicControlsTests extends TestUtilities {
     @Test
     public void checkboxTest() {
         SoftAssert softAssert = new SoftAssert();
-        //Open Welcome Page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
 
         //Go to Dynamic Controls Page
-        DynamicControlsPage dynamicControlsPage = welcomePage.clickDynamicControlsLink();
+        DynamicControlsPage dynamicControlsPage = openWelcomePage().clickDynamicControlsLink();
 
         //Mark checkbox
         dynamicControlsPage.markCheckbox();
@@ -35,12 +32,8 @@ public class DynamicControlsTests extends TestUtilities {
     public void checkboxAndRemoveTest() {
         SoftAssert softAssert = new SoftAssert();
 
-        //Open Welcome Page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
-
         //Go to Dynamic Controls Page
-        DynamicControlsPage dynamicControlsPage = welcomePage.clickDynamicControlsLink();
+        DynamicControlsPage dynamicControlsPage = openWelcomePage().clickDynamicControlsLink();
 
         //Mark checkbox
         dynamicControlsPage.markCheckbox();
@@ -61,12 +54,9 @@ public class DynamicControlsTests extends TestUtilities {
     @Test
     public void enableTextInputTest() {
         SoftAssert softAssert = new SoftAssert();
-        //Open Welcome Page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
 
         //Go to Dynamic Controls Page
-        DynamicControlsPage dynamicControlsPage = welcomePage.clickDynamicControlsLink();
+        DynamicControlsPage dynamicControlsPage = openWelcomePage().clickDynamicControlsLink();
 
         //Verify if text input is disabled
         softAssert.assertTrue(dynamicControlsPage.isTextInputEnabled());

@@ -13,7 +13,6 @@ public class EntryAdTests extends TestUtilities {
     private final String expectedModalTitle = "This is a modal window";
     private final String expectedModalText = "It's commonly used to encourage a user to take an action (e.g., give their e-mail address to sign up for something or disable their ad blocker).";
 
-    WelcomePage welcomePage;
     //endregion
 
     //region Tests
@@ -22,8 +21,7 @@ public class EntryAdTests extends TestUtilities {
     @Test
     public void checkModalTitle() {
 
-        welcomePage = new WelcomePage(driver, log);
-        EntryAdPage entryAdPage = welcomePage.clickEntryAdLink();
+        EntryAdPage entryAdPage = openWelcomePage().clickEntryAdLink();
         EntryAdModalWindowPage entryAdModalWindowPage = entryAdPage.entryAdModalPage();
 
         //Verify if modal is displayed
@@ -42,8 +40,7 @@ public class EntryAdTests extends TestUtilities {
     @Test
     public void checkModalText() {
 
-        welcomePage = new WelcomePage(driver, log);
-        EntryAdPage entryAdPage = welcomePage.clickEntryAdLink();
+        EntryAdPage entryAdPage = openWelcomePage().clickEntryAdLink();
         EntryAdModalWindowPage entryAdModalWindowPage = entryAdPage.entryAdModalPage();
 
         //Verify if modal is displayed
@@ -62,8 +59,7 @@ public class EntryAdTests extends TestUtilities {
     @Test
     public void checkCloseButton() {
 
-        welcomePage = new WelcomePage(driver, log);
-        EntryAdPage entryAdPage = welcomePage.clickEntryAdLink();
+        EntryAdPage entryAdPage = openWelcomePage().clickEntryAdLink();
         EntryAdModalWindowPage entryAdModalWindowPage = entryAdPage.entryAdModalPage();
 
         //Verify if modal is displayed
@@ -81,8 +77,7 @@ public class EntryAdTests extends TestUtilities {
     @Test
     public void checkIfModalIsReOpened() {
 
-        welcomePage = new WelcomePage(driver, log);
-        EntryAdPage entryAdPage = welcomePage.clickEntryAdLink();
+        EntryAdPage entryAdPage = openWelcomePage().clickEntryAdLink();
         EntryAdModalWindowPage entryAdModalWindowPage = entryAdPage.entryAdModalPage();
 
         //Click 'Close' link to close the modal

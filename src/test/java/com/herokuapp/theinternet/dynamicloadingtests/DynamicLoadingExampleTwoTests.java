@@ -12,15 +12,11 @@ import java.util.ArrayList;
 
 public class DynamicLoadingExampleTwoTests extends TestUtilities {
 
-    //region Variables
-    WelcomePage welcomePage;
-    //endregion
-
     //region Tests
     @Test
     public void checkPageTitle() throws IOException {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
         DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         log.info("Get current page title");
@@ -36,8 +32,8 @@ public class DynamicLoadingExampleTwoTests extends TestUtilities {
 
     @Test
     public void verifyDynamicText() throws IOException {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
         DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         log.info("Click 'Start' button");
@@ -55,8 +51,8 @@ public class DynamicLoadingExampleTwoTests extends TestUtilities {
 
     @Test
     public void verifyPageUrl() throws IOException {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
         DynamicLoadingExampleTwoPage dynamicTwo = dynamicLoadingPage.goToExampleTwoPage();
 
         String pathname = "src/test/resources/dataproviders/Shared/" + testMethodName + ".csv";

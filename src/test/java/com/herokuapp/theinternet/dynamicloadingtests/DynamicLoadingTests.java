@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class DynamicLoadingTests extends TestUtilities {
 
     //region Variables
-    WelcomePage welcomePage;
     String expectedPageOneUrl = "https://the-internet.herokuapp.com/dynamic_loading/1";
     String expectedPageTwoUrl = "https://the-internet.herokuapp.com/dynamic_loading/2";
     //endregion
@@ -22,8 +21,8 @@ public class DynamicLoadingTests extends TestUtilities {
 
     @Test
     public void checkPageTitle() throws IOException {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
 
         log.info("Get current page title");
         String actualTitle = dynamicLoadingPage.getPageTitle();
@@ -39,8 +38,8 @@ public class DynamicLoadingTests extends TestUtilities {
 
     @Test
     public void verifyPageUrl() throws IOException {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
 
         log.info("Get current page URL");
         String currentUrl = dynamicLoadingPage.getCurrentUrl();
@@ -56,8 +55,8 @@ public class DynamicLoadingTests extends TestUtilities {
 
     @Test
     public void checkExampleOnePageLink() throws Exception {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
 
         log.info("Verify Example One link");
         DynamicLoadingExampleOnePage dynamicExampleOne = dynamicLoadingPage.goToExampleOnePage();
@@ -68,8 +67,8 @@ public class DynamicLoadingTests extends TestUtilities {
     }
     @Test
     public void checkExampleTwoPageLink() {
-        welcomePage = new WelcomePage(driver, log);
-        DynamicLoadingPage dynamicLoadingPage = welcomePage.clickDynamicLoadingLink();
+
+        DynamicLoadingPage dynamicLoadingPage = openWelcomePage().clickDynamicLoadingLink();
 
         log.info("Verify Example One link");
         DynamicLoadingExampleTwoPage dynamicExampleTwo = dynamicLoadingPage.goToExampleTwoPage();

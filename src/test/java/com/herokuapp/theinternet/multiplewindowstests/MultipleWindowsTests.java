@@ -9,15 +9,10 @@ import java.io.IOException;
 
 public class MultipleWindowsTests extends TestUtilities {
 
-    //region Variables
-    WelcomePage welcomePage;
-    //endregion
-
     @Test
     public void verifyNewWindowLinkOpensCorrectPageUrl() throws IOException {
 
-        welcomePage = new WelcomePage(driver, log);
-        MultipleWindowsPage multipleWindowsPage = welcomePage.clickMultipleWindowsLink();
+        MultipleWindowsPage multipleWindowsPage = openWelcomePage().clickMultipleWindowsLink();
 
 
         multipleWindowsPage.clickNewWindowLink();
