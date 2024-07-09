@@ -1,11 +1,7 @@
 package com.herokuapp.theinternet.base;
 import java.io.*;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.opencsv.exceptions.CsvValidationException;
 import org.testng.annotations.DataProvider;
@@ -40,9 +36,9 @@ public class CsvDataProviders {
             }
             reader.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException("File " + pathname + " was not found.\n" + e.getStackTrace().toString());
+            throw new RuntimeException("File " + pathname + " was not found.\n" + Arrays.toString(e.getStackTrace()));
         } catch (IOException e) {
-            throw new RuntimeException("Could not read " + pathname + " file.\n" + e.getStackTrace().toString());
+            throw new RuntimeException("Could not read " + pathname + " file.\n" + Arrays.toString(e.getStackTrace()));
         } catch (CsvValidationException e) {
             throw new RuntimeException(e);
         }
