@@ -85,6 +85,4 @@ graph
 ```
 
 ## TO DO
-- Refactor code so Welcome Page is opened before every test
 - Add error handling
-- Add config file
