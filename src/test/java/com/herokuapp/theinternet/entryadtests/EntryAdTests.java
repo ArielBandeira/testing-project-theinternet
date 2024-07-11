@@ -1,19 +1,15 @@
 package com.herokuapp.theinternet.entryadtests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.configuration.Properties;
 import com.herokuapp.theinternet.pages.windows.EntryAdModalWindowPage;
 import com.herokuapp.theinternet.pages.EntryAdPage;
-import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EntryAdTests extends TestUtilities {
 
-    //region Variables
-    private final String expectedModalTitle = "This is a modal window";
-    private final String expectedModalText = "It's commonly used to encourage a user to take an action (e.g., give their e-mail address to sign up for something or disable their ad blocker).";
-
-    //endregion
+    static Properties properties = new Properties();
 
     //region Tests
 
@@ -29,6 +25,9 @@ public class EntryAdTests extends TestUtilities {
 
         //Get modal window title
         String actualModalTitle = entryAdModalWindowPage.getModalWindowTitle().toLowerCase();
+
+        //Get modal title from config file
+        String expectedModalTitle = properties.getModalTitle();
 
         //Verify if modal window title is the expected
         Assert.assertEquals(expectedModalTitle.toLowerCase(), actualModalTitle, "Modal title is not the expected");
@@ -48,6 +47,9 @@ public class EntryAdTests extends TestUtilities {
 
         //Get modal window text
         String actualModalText = entryAdModalWindowPage.getModalWindowText().toLowerCase();
+
+        //Get modal text from config file
+        String expectedModalText = properties.getModalText();
 
         //Verify if modal window text is the expected
         Assert.assertEquals(expectedModalText.toLowerCase(), actualModalText, "Modal text is not the expected");

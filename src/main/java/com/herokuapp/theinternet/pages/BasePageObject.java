@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet.pages;
 
 import com.herokuapp.theinternet.base.TestListener;
+import com.herokuapp.theinternet.configuration.Properties;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -16,7 +17,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 @Listeners({ TestListener.class })
-public class BasePageObject {
+public class BasePageObject extends Properties {
 
     protected WebDriver driver;
     protected Logger log;

@@ -54,4 +54,5 @@ public class BaseTest {
         log.info("Close browser");
         driver.quit();
     }
+
 }

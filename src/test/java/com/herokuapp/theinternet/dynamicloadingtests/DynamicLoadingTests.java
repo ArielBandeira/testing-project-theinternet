@@ -1,10 +1,10 @@
 package com.herokuapp.theinternet.dynamicloadingtests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.configuration.Properties;
 import com.herokuapp.theinternet.pages.DynamicLoadingExampleOnePage;
 import com.herokuapp.theinternet.pages.DynamicLoadingExampleTwoPage;
 import com.herokuapp.theinternet.pages.DynamicLoadingPage;
-import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
@@ -13,8 +13,7 @@ import java.util.ArrayList;
 public class DynamicLoadingTests extends TestUtilities {
 
     //region Variables
-    String expectedPageOneUrl = "https://the-internet.herokuapp.com/dynamic_loading/1";
-    String expectedPageTwoUrl = "https://the-internet.herokuapp.com/dynamic_loading/2";
+    Properties properties = new Properties();
     //endregion
 
     //region Tests
@@ -61,8 +60,12 @@ public class DynamicLoadingTests extends TestUtilities {
         log.info("Verify Example One link");
         DynamicLoadingExampleOnePage dynamicExampleOne = dynamicLoadingPage.goToExampleOnePage();
 
+        String actualPageOneUrl = dynamicExampleOne.getCurrentUrl();
+
+        String expectedPageOneUrl = properties.getPageOneUrl();
+
         log.info("Verify if current page URL is the expected");
-        Assert.assertTrue(dynamicExampleOne.verifyCurrentPageUrlIsExpected(expectedPageOneUrl));
+        Assert.assertEquals(actualPageOneUrl, expectedPageOneUrl, "Actual URL does not match the expected URL");
 
     }
     @Test
@@ -73,8 +76,13 @@ public class DynamicLoadingTests extends TestUtilities {
         log.info("Verify Example One link");
         DynamicLoadingExampleTwoPage dynamicExampleTwo = dynamicLoadingPage.goToExampleTwoPage();
 
+        String actualPageTwoUrl = dynamicExampleTwo.getCurrentUrl();
+
+        String expectedPageTwoUrl = properties.getPageTwoUrl();
+
         log.info("Verify if current page URL is the expected");
-        Assert.assertTrue(dynamicExampleTwo.verifyCurrentPageUrlIsExpected(expectedPageTwoUrl));
+        Assert.assertEquals(actualPageTwoUrl, expectedPageTwoUrl, "Actual URL does not match the expected URL");
+
     }
 
     //endregion

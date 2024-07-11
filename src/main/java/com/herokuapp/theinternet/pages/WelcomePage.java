@@ -1,30 +1,33 @@
 package com.herokuapp.theinternet.pages;
 
-import com.herokuapp.theinternet.pages.windows.EntryAdModalWindowPage;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class WelcomePage extends BasePageObject {
 
-    String welcomePageUrl = "https://the-internet.herokuapp.com";
+    // region Variables
     protected By dropdownLinkLocator = By.linkText("Dropdown");
     protected By dynamicControlsLinkLocator = By.linkText("Dynamic Controls");
     protected By dynamicLoadingLinkLocator = By.linkText("Dynamic Loading");
     protected By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
     protected By entryAdLinkLocator = By.linkText("Entry Ad");
+    // endregion
 
     /**
      * Constructor
      * @param driver
      * @param log
      */
-    public WelcomePage(WebDriver driver, Logger log) { super(driver, log); }
+    public WelcomePage(WebDriver driver, Logger log) {
+        super(driver, log);
+    }
 
     /**
      * Open Home page
      */
     public void openPage() {
+        String welcomePageUrl = getWelcomePageUrl();
         log.info("Open page: " + welcomePageUrl);
         openUrl(welcomePageUrl);
     }
